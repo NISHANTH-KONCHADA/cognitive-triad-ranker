@@ -142,17 +142,27 @@ def process_candidates(input_path, top_k=100):
     scored_candidates = []
     
     open_func = gzip.open if str(input_path).endswith('.gz') else open
+    is_jsonl = str(input_path).endswith('.jsonl') or str(input_path).endswith('.jsonl.gz')
     
     with open_func(input_path, 'rt', encoding='utf-8') as f:
-        for line in f:
-            if not line.strip():
-                continue
-            cand = json.loads(line)
-            score, reasoning = score_candidate(cand)
-            if score > 0:
-                # Round to 4 decimal places to ensure exact tie-breaking logic matches CSV output
-                rounded_score = round(score, 4)
-                scored_candidates.append((rounded_score, cand['candidate_id'], reasoning))
+        if not is_jsonl:
+            # Parse as a single JSON array (for sample_candidates.json)
+            candidates_list = json.load(f)
+            for cand in candidates_list:
+                score, reasoning = score_candidate(cand)
+                if score > 0:
+                    rounded_score = round(score, 4)
+                    scored_candidates.append((rounded_score, cand['candidate_id'], reasoning))
+        else:
+            # Parse line by line (for candidates.jsonl)
+            for line in f:
+                if not line.strip():
+                    continue
+                cand = json.loads(line)
+                score, reasoning = score_candidate(cand)
+                if score > 0:
+                    rounded_score = round(score, 4)
+                    scored_candidates.append((rounded_score, cand['candidate_id'], reasoning))
                 
     # Sort descending by score, tie break by candidate_id ascending
     scored_candidates.sort(key=lambda x: (-x[0], x[1]))
