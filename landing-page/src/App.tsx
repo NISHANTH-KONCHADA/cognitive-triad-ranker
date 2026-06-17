@@ -120,7 +120,7 @@ function App() {
         </div>
 
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-2 py-2 items-center gap-1">
-          <a href={digImg} target="_blank" rel="noreferrer" className="text-white hover:bg-white/20 transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Architecture Diagram</a>
+          <a href={"https://github.com/NISHANTH-KONCHADA/cognitive-triad-ranker/blob/main/landing-page/src/assets/dig.png?raw=true"} target="_blank" rel="noreferrer" className="text-white hover:bg-white/20 transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Architecture Diagram</a>
           <a href="https://github.com/NISHANTH-KONCHADA/cognitive-triad-ranker" target="_blank" rel="noreferrer" className="text-white/80 hover:bg-white/20 hover:text-white transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Source Code</a>
         </div>
 
