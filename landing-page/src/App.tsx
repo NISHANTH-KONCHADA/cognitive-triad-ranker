@@ -122,9 +122,14 @@ function App() {
           <a href="https://github.com/NISHANTH-KONCHADA/cognitive-triad-ranker" target="_blank" rel="noreferrer" className="text-white/80 hover:bg-white/20 hover:text-white transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Source Code</a>
         </div>
 
-        <a href="https://github.com/NISHANTH-KONCHADA/cognitive-triad-ranker" target="_blank" rel="noreferrer" className="hidden md:block bg-white text-gray-900 text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gray-100 cursor-pointer">
-          View on GitHub
-        </a>
+        <div className="hidden md:flex items-center gap-4">
+          <span className="text-white font-bold text-2xl tracking-wide" style={{ fontFamily: 'sans-serif' }}>redrob</span>
+          <span className="w-px h-8 bg-white/40"></span>
+          <div className="flex flex-col items-center justify-center">
+            <span className="text-white font-black text-2xl leading-none tracking-wider">H2S</span>
+            <span className="text-white/80 text-[7px] tracking-[0.3em] mt-1 leading-none font-semibold">HACK2SKILL</span>
+          </div>
+        </div>
       </nav>
 
       <section className="relative w-full overflow-hidden bg-black" style={{ height: '100dvh' }}>
