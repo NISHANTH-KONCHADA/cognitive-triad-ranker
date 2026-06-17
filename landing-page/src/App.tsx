@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
-const BG_IMAGE_1 = "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_195923_b0ba8ace-1d1d-4f2c-9a28-1ab84b330680.png&w=1280&q=85";
-const BG_IMAGE_2 = "https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_201152_bba90a12-bf12-459f-91f0-51f237dbaf3b.png&w=1280&q=85";
+import digImg from './assets/dig.png';
+
+const BG_IMAGE_1 = "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop";
+const BG_IMAGE_2 = "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop";
 const SPOTLIGHT_R = 260;
 
 const RevealLayer = ({ cursorX, cursorY }: { cursorX: number; cursorY: number }) => {
@@ -118,14 +120,13 @@ function App() {
         </div>
 
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-2 py-2 items-center gap-1">
-          <button className="text-white px-4 py-1.5 rounded-full text-sm font-medium">Architecture</button>
-          <button className="text-white/80 hover:bg-white/20 hover:text-white transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Workflow</button>
-          <button className="text-white/80 hover:bg-white/20 hover:text-white transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Validation</button>
+          <a href={digImg} target="_blank" rel="noreferrer" className="text-white hover:bg-white/20 transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Architecture Diagram</a>
+          <a href="https://github.com/NISHANTH-KONCHADA/cognitive-triad-ranker" target="_blank" rel="noreferrer" className="text-white/80 hover:bg-white/20 hover:text-white transition-colors px-4 py-1.5 rounded-full text-sm font-medium">Source Code</a>
         </div>
 
-        <div className="hidden md:block bg-white text-gray-900 text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gray-100 cursor-pointer">
-          Redrob | Hack2Skill
-        </div>
+        <a href="https://github.com/NISHANTH-KONCHADA/cognitive-triad-ranker" target="_blank" rel="noreferrer" className="hidden md:block bg-white text-gray-900 text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gray-100 cursor-pointer">
+          View on GitHub
+        </a>
       </nav>
 
       <section className="relative w-full overflow-hidden bg-black" style={{ height: '100dvh' }}>
