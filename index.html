@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Triad Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --surface-color: #1a1d24;
+            --primary: #8b5cf6;
+            --primary-glow: rgba(139, 92, 246, 0.4);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #2dd4bf;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            background: rgba(45, 212, 191, 0.1);
+            color: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--surface-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .card p {
+            color: var(--text-muted);
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: white;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="badge">HACKATHON SUBMISSION</div>
+            <h1>Cognitive Triad Architecture</h1>
+            <p class="subtitle">A blazingly fast, highly deterministic O(1) Candidate Discovery Engine built entirely in pure Python.</p>
+            
+            <div class="btn-group">
+                <!-- User can swap this URL with their Colab link -->
+                <a href="https://colab.research.google.com/drive/1hsgdND3edPTgdujltDK42j_wqRjzZ2tD?usp=sharing" target="_blank" class="btn btn-primary">Run in Sandbox</a>
+                <!-- User can swap this URL with their GitHub repo link -->
+                <a href="https://github.com/NISHANTH-KONCHADA/cognitive-triad-ranker" target="_blank" class="btn btn-secondary">View GitHub Repo</a>
+            </div>
+        </header>
+
+        <div class="card-grid">
+            <div class="card">
+                <h3>L1: The Sleuth</h3>
+                <p>An initial trapdoor layer that detects impossibilities, eliminates honeypots, and blocks keyword-stuffing profiles from infiltrating the funnel.</p>
+            </div>
+            
+            <div class="card">
+                <h3>L2: The Assessor</h3>
+                <p>A semantic ontology scorer that maps domain depth. It actively rewards true NLP/RAG engineering experience while neutralizing irrelevant fields like pure Speech or CV.</p>
+            </div>
+            
+            <div class="card">
+                <h3>L3: The Recruiter</h3>
+                <p>A behavioral economics layer that multiplies scores based on real-world availability: prioritizing high recruiter response rates and short notice periods.</p>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 4rem 2rem;">
+            <h3>Performance Specs</h3>
+            <p style="margin-top: 1rem; font-size: 1.1rem; color: #fff;">
+                Processed <strong>100,000</strong> candidates in <strong>&lt; 20 seconds</strong>.<br>
+                100% Native Python. Zero API Calls. Zero LLM Hallucination.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
