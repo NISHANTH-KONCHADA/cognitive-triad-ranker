@@ -1,0 +1,21 @@
+# Ignore huge datasets
+candidates.jsonl
+candidates.jsonl.gz
+
+# Ignore outputs
+submission.csv
+sample_submission_output.csv
+sample_submission.csv
+
+# Ignore documentation extracts (optional, but keeps repo clean)
+job_description.md
+job_description.docx
+redrob_signals_doc.md
+redrob_signals_doc.docx
+submission_spec.md
+submission_spec.docx
+README.docx
+
+# Python
+__pycache__/
+*.pyc

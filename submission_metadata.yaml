@@ -1,0 +1,12 @@
+team_name: "Antigravity AI"
+primary_contact_name: "Konch"
+primary_contact_email: "konch@example.com"
+primary_contact_phone: "+91-9876543210"
+github_repo_url: "https://github.com/sample_user/antigravity-ranker"
+sandbox_link: "https://colab.research.google.com/sample"
+ai_tools_declared: ["Claude", "Gemini"]
+compute_environment: "Standard Python 3.10 CPU Environment"
+team_members:
+  - name: "Konch"
+    email: "konch@example.com"
+methodology_summary: "We used a Cognitive Triad Architecture: streaming anomaly detection to filter honeypots, a localized BM25-style ontology heuristic to score NLP/IR depth over pure CV, and a behavioral economics multiplier combining recruiter response rates and notice periods."
